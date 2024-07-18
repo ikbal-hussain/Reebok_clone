@@ -12,8 +12,21 @@
        
       }
       #cart-navbar {
+        height: 70px;
+        background-color: rgb(255, 224, 207);
+        border-radius: 20px;
+        padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        font-size: 30px;
+      }
+      #cart-navbar span {
+        font-weight: bold;
+      }
+      #cart-navbar {
         height: 100px;
-        background-color: rgb(168, 169, 170);
+        background-color: rgb(247, 236, 236);
       }
       #cart-section{
         display: flex;
@@ -21,9 +34,14 @@
       }
       #left-section{
         width: 60%;
-        background-color: yellow; 
+        background-color:white; 
         height: 500px;
         padding: 20px;   
+     }
+      #left-section p{
+          font-weight: bold;
+          background-color: #cc9d9d;
+          padding: 5px;
      }
       #right-section{
         width: 35%;
@@ -36,12 +54,13 @@
   <body>
     <div id="cart-container">
       <nav id="cart-navbar">
-       <button> WishList </button>
-        <button>Contact Us</button>
+       <span> WishList </span>
+        <span>Contact Us</span>
       </nav>
+      <hr>
        <section id="cart-section">
           <div id="left-section">
-            <button>Home Page</button>
+            <span><b></b>Home Page</span>
             <h1>MY SHOPPING BAG</h1>
             <hr>
             <p>STANDARD DELIVERY</p>
