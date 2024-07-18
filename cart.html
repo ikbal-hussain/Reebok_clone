@@ -5,72 +5,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Cart</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
+      * {
+        font-family: "Heebo", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
       #cart-container {
         max-width: 1400px;
         margin-left: auto;
-        margin-left: auto;
-       
+        margin-right: auto;
       }
       #cart-navbar {
-        height: 70px;
-        background-color: rgb(255, 224, 207);
-        border-radius: 20px;
+        height: 50px;
+        background-color: white;
+        /* border-radius: 20px; */
         padding: 10px;
         display: flex;
         justify-content: flex-end;
         gap: 15px;
-        font-size: 30px;
+        font-size: 24px;
+        box-shadow: rgba(0, 5, 5, 0.25) 0px 25px 50px -12px;
+        margin-bottom: 4px;
       }
       #cart-navbar span {
         font-weight: bold;
       }
-      #cart-navbar {
-        height: 100px;
-        background-color: rgb(247, 236, 236);
+      #cart-navbar span{
+          display: flex;
+          align-items: center;
       }
-      #cart-section{
+      #cart-section {
+        height: 700px;
         display: flex;
         gap: 20px;
+        background-color: #f6f6f6;
       }
-      #left-section{
+      #left-section {
         width: 60%;
-        background-color:white; 
+        background-color: white;
         height: 500px;
-        padding: 20px;   
-     }
-      #left-section p{
-          font-weight: bold;
-          background-color: #cc9d9d;
-          padding: 5px;
-     }
-      #right-section{
-        width: 35%;
-        background-color: rgb(61, 61, 18); 
-        height: 500px;    
-        padding: 20px;   
-     }
+        padding: 20px;
+      }
+      #left-section p {
+        font-weight: bold;
+        background-color: #e6a757;
+        padding: 5px;
+      }
+      #homePageBtn {
+       display: flex;
+       align-items: center;
+      }
+      #right-section {
+        width: 31%;
+        background-color: #f6f6f6;
+        height: 500px;
+        padding: 30px;
+      }
+      #summary-container{
+        height: 250px;
+         background-color:white;
+         border-radius: 20px;
+         padding: 20px;
+         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      #bottom-banner{
+        /* height: 250px; */
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        /* justify-content: space-around; */
+         background-color:white;
+         border-radius: 20px;
+         padding: 20px;
+         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      #bottom-banner div{
+         /* display: block; */
+         /* width: 50px; */
+         /* border: 1px solid; */
+         margin: 5px;
+         text-align: center;
+      }
+      #bottom-banner div img{
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         margin-bottom: 11px;
+      }
+      /* #bag-total{
+         
+      } */
+      #inside-bag-total-1{
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+      }
+      #inside-bag-total-2{
+        display: flex;
+        justify-content: space-between;
+        
+      }
+      #payable-amount{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        font-size: large;
+        border-top: 1px solid #dcdcdc;
+        
+      }
+      #checkoutBtn{
+         width: 100%;
+         padding: 15px;
+         border-radius: 15px;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        border: none;
+        margin-top: 20px;
+      }
     </style>
   </head>
   <body>
     <div id="cart-container">
       <nav id="cart-navbar">
-       <span> WishList </span>
-        <span>Contact Us</span>
+        <span> 
+          <img src="assests/wishlist-cart-page-images (7).png" alt="prev icon"> WishList 
+        </span>
+        <span> 
+          <img src="assests/contact-cart-page-images (1).png" alt="prev icon">Contact Us
+        </span>
       </nav>
-      <hr>
-       <section id="cart-section">
-          <div id="left-section">
-            <span><b></b>Home Page</span>
-            <h1>MY SHOPPING BAG</h1>
-            <hr>
-            <p>STANDARD DELIVERY</p>
-            
+    
+      <section id="cart-section">
+        <div id="left-section">
+          <span id="homePageBtn">
+            <img src="assests/prev-icon-cart-page-images(2).png" alt="prev icon"><b>Home Page</b>
+          </span>
+          <h1>MY SHOPPING BAG</h1>
+          <hr />
+          <p>STANDARD DELIVERY</p>
+        </div>
+        <div id="right-section">
+          <h1>ORDER SUMMARY</h1>
+          <div id="summary-container">
+             <div id="bag-total">
+              <div id="inside-bag-total-1">
+                <span>Bag Total(1)</span>
+                <span>₹ 999</span>
+               </div>
+              <div id="inside-bag-total-2">
+                <span>Shipping</span>
+                <span>Free</span>
+               </div>
+             </div>
+             <div id="payable-amount">
+              <span><p style="margin-bottom: 0px;">Payable Amount</p>
+              <p style="font-size:medium; font-weight: normal; margin-top: 0px;">(Includes Tax)</p></span>
+              <span>₹ 999</span>
+             </div>
+             <button id="checkoutBtn"> CHECKOUT(1)</button>
           </div>
-          <div id="right-section">
-
+          <div id="bottom-banner">
+             <div> <img src="assests/banner-logo.png" alt="logo">Secure Checkout</div>
+             <div><img src="assests/banner-logo (1).png" alt="logo">Easy returns &amp exchanges</div>
+             <div><img src="assests/banner-logo (2).png" alt="logo">Free shipping</div>
           </div>
-       </section>
-
+        </div>
+      </section>
     </div>
   </body>
 </html>
+<script src="components/cart.js">
+
+</script>
