@@ -1,3 +1,14 @@
+let login = document.getElementById("login-btn")
+let isLogged = JSON.parse(localStorage.getItem("isLogged")) || false
+
+if(isLogged){
+  loggedUser.innerHTML = isLogged.username
+  login.innerHTML = "Log out"
+  login.addEventListener("click" , ()=>{
+    localStorage.removeItem('isLogged')
+  })
+}
+
 // carousel function
 let currentIndex = 0;
 
