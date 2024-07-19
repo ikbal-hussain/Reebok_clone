@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles/checkout.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+        <button id="backToCartBtn">Back to Cart</button>
+    </header>
+    <main>
+        <section id="orderSummary">
+            <h2>Order Summary</h2>
+            <div id="orderItemsContainer"></div>
+            <p>Total: ₹<span id="orderTotal">0</span></p>
+        </section>
+        <section id="paymentDetails">
+            <h2>Payment Details</h2>
+            <form id="checkoutForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="address">Address:</label>
+                <input type="text" id="address" required>
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" required>
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="text" id="expiryDate" required>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" required>
+                <button type="submit">Place Order</button>
+            </form>
+        </section>
+    </main>
+    <!-- <script src="scripts.js"></script> Link to your JavaScript file -->
+</body>
+</html>
+<script>
+   document.addEventListener('DOMContentLoaded', () => {
+    const orderItemsContainer = document.querySelector('#orderItemsContainer');
+    const orderTotalElement = document.querySelector('#orderTotal');
+    const checkoutForm = document.querySelector('#checkoutForm');
+    const backToCartBtn = document.querySelector('#backToCartBtn');
+
+    backToCartBtn.addEventListener('click', () => {
+        window.location.href = 'cart.html';
+    });
+
+    function displayOrderSummary(cartItems) {
+        orderItemsContainer.innerHTML = '';
+        let orderTotal = 0;
+
+        cartItems.forEach(item => {
+            let cleanedPrice = item.price.replace(/[, ]+/g, '');
+            let itemPrice = parseFloat(cleanedPrice);
+            let itemQuantity = parseInt(item.quantity) || 1;
+
+            let itemTotal = itemPrice * itemQuantity;
+
+            let itemElement = document.createElement('div');
+            itemElement.className = 'order-item';
+            itemElement.innerHTML = `
+                <img src="${item.ImageUrl}" alt="">
+                <div>
+                    <p>${item.ProductName}</p>
+                    <p>Quantity: ${itemQuantity}</p>
+                    <p>Price per item: ₹${itemPrice.toFixed(2)}</p>
+                    <p>Total Price: ₹${itemTotal.toFixed(2)}</p>
+                </div>
+            `;
+            orderItemsContainer.appendChild(itemElement);
+            orderTotal += itemTotal;
+        });
+
+        orderTotalElement.textContent = orderTotal.toFixed(2);
+    }
+
+    function fetchOrderItemsFromLocalStorage() {
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        displayOrderSummary(cartItems);
+        
+        // Retrieve bagTotalSum from localStorage and update the order total
+        let bagTotalSum = JSON.parse(localStorage.getItem('bagTotalSum')) || 0;
+        orderTotalElement.textContent = bagTotalSum.toFixed(2); // Display bag total
+    }
+
+    checkoutForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        let name = document.querySelector('#name').value;
+        let address = document.querySelector('#address').value;
+        let cardNumber = document.querySelector('#cardNumber').value;
+        let expiryDate = document.querySelector('#expiryDate').value;
+        let cvv = document.querySelector('#cvv').value;
+
+        if (validateForm(name, address, cardNumber, expiryDate, cvv)) {
+            console.log('Order placed successfully!');
+            alert('Order placed successfully!');
+            localStorage.removeItem('cartItems'); // Clear the cart
+            localStorage.removeItem('bagTotalSum'); // Clear the bag total
+            window.location.href = 'thankYou.html'; // Redirect to a thank you page
+        } else {
+            alert('Please fill out all fields correctly.');
+        }
+    });
+
+    function validateForm(name, address, cardNumber, expiryDate, cvv) {
+        return name && address && cardNumber && expiryDate && cvv;
+    }
+
+    fetchOrderItemsFromLocalStorage();
+});
+
+
+</script>
