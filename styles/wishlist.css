@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    height: 100%;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content span {
+    font-weight: bold;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-divider {
+    height: 30px;
+    width: 1px;
+    background-color: rgb(207, 204, 204);
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.right-menu {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transform: translateY(-50%);
+}
+
+
+
+
+.container {
+    display: flex;
+    
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+
+
+    text-transform: uppercase;
+    color: #000;
+}
+
+.profile {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.profile p {
+    margin: 20px 10px;
+
+}
+
+.profile-pic>img {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+.nav-links a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 10px;
+
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-links a.active {
+    background-color: #f9a825;
+    color: #fff;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.breadcrumb {
+    margin-bottom: 20px;
+}
+
+.brands {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.brand {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.brand img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #222222;
+    color: #fff;
+    padding: 10px 0;
+
+
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    text-align: left;
+}
+
+.footer-column {
+    color: #fff;
+    text-align: left;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.footer-column a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
+    background-color: #000000;
+    padding: 20px;
+    justify-content: space-between;
+
+}
