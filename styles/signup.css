@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    align-items: center;
+}
+
+h1 {
+    color: #ffa500;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.dob-inputs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dob-inputs input {
+    flex: 1;
+}
+
+small {
+    display: block;
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+.gender-options {
+    display: flex;
+    gap: 1rem;
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #000;
+    color: orange;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #333;
+}
+.toggle-container {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+#toggleButton {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#toggleButton:hover {
+    background-color: #ff8c00;
+}
+
+#loginSection {
+    display: none;
+}
