@@ -42,6 +42,9 @@ body {
     /* justify-content: space-around; */
 }
 
+.header_wrap a{
+    color: white;
+}
 .header_wrap > select{
     background-color: #2a2929;
 }
@@ -57,8 +60,9 @@ body {
     font-family: sans-serif;
     font-size: 16px;
 }
-.navbar span{
-    cursor: pointer;
+.navbar a{
+    color: black;
+    text-decoration: none;
 }
 .navbar img{
     width:140px;
