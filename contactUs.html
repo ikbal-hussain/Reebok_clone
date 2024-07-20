@@ -3,112 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us SportStyle</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>Contact Us - SportStyle</title>
     <style>
+         @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: "Heebo", sans-serif;
+        }
 
-header {
-    background-color: #222;
-    color: #fff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        header {
+            background-color: #c00f2d;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-weight: bold;
+        }
 
-header h1 {
-    margin: 0;
-  
-}
-header h1 a {
-    margin: 0;
-    text-decoration: none;
-    color: white;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            display: inline-block;
+        }
 
-nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-}
+        nav a:hover {
+            background-color: #c00f2d;
+        }
 
-nav .active {
-    font-weight: bold;
-}
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            /* background-color: white; */
+            /* border-radius: 8px; */
+            /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+        }
 
-main {
-    padding: 20px;
-}
+        h1, h2 {
+            color: #c00f2d;
+        }
 
-.contact-us {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        .contact-us {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-.contact-us h2 {
-    margin-top: 0;
-}
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-.form-group {
-    margin-bottom: 15px;
-}
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
+        button {
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-button {
-    background-color: #0073e6;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
+        button:hover {
+            background-color: #005bb5;
+        }
 
-button:hover {
-    background-color: #005bb5;
-}
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
 
-footer {
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
+        /* Media Queries */
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                padding: 10px;
+            }
 
+            main {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 8px;
+            }
+
+            button {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1><a href="index.html">SportStyle</a></h1>
         <nav>
-            <!-- <a href="index.html">Home</a> -->
+            <a href="index.html">Home</a>
             <a href="cart.html">Cart</a>
-            <a href="#">About</a>
-            <span href="contact.html" class="active">Contact Us</span>
+            <a href="aboutUs.html">About Us</a>
+            <span href="contactUs.html" class="active">Contact Us</span>
         </nav>
     </header>
 
@@ -137,25 +154,23 @@ footer {
         <p>&copy; 2024 SportStyle. All rights reserved.</p>
     </footer>
 
-    <!-- <script src="script.js"></script> -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            console.log(`Name: ${name}`);
+            console.log(`Email: ${email}`);
+            console.log(`Message: ${message}`);
+            
+            alert('Thank you for contacting us! We will get back to you soon.');
+            
+            // Reset the form
+            event.target.reset();
+        });
+    </script>
 </body>
 </html>
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    console.log(`Name: ${name}`);
-    console.log(`Email: ${email}`);
-    console.log(`Message: ${message}`);
-    
-    alert('Thank you for contacting us! We will get back to you soon.');
-    
-    // Reset the form
-    event.target.reset();
-});
-
-</script>
