@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": "88b7",
+      "firstName": "Mukul ",
+      "lastName": "K",
+      "email": "m@gmail.com",
+      "password": "1234",
+      "dob": {
+        "day": "1",
+        "month": "2",
+        "year": "3"
+      },
+      "gender": "FEMALE"
+    }
+  ]
+}

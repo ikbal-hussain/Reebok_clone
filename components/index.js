@@ -1,13 +1,28 @@
-let login = document.getElementById("login-btn")
-let isLogged = JSON.parse(localStorage.getItem("isLogged")) || false
+let login = document.getElementById("login-btn");
+let isLogged = JSON.parse(localStorage.getItem("isLogged"));
 
-if(isLogged){
-  loggedUser.innerHTML = isLogged.username
-  login.innerHTML = "Log out"
-  login.addEventListener("click" , ()=>{
-    localStorage.removeItem('isLogged')
-  })
+// Create an element to show the user's first name
+let userNameDisplay = document.createElement("span");
+userNameDisplay.id = "user-name";
+login.parentNode.insertBefore(userNameDisplay, login);
+
+if (isLogged) {
+    // Update UI to reflect logged-in status
+    userNameDisplay.innerHTML = `Hello, ${isLogged.firstName}`;
+    login.innerHTML = "Log out";
+    login.addEventListener("click", () => {
+        localStorage.removeItem('isLogged');
+        window.location.href = "./signup.html";
+    });
+} else {
+    userNameDisplay.innerHTML = "";
+    login.innerHTML = "Login";
+    login.addEventListener("click", () => {
+        window.location.href = "./signup.html";
+    });
 }
+
+
 
 // carousel function
 let currentIndex = 0;
