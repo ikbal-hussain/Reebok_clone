@@ -1,0 +1,289 @@
+body {
+  margin: auto;
+  padding: 0;
+  max-width: 1600px;
+  font-family: sans-serif;
+  background-color: white;
+  /* background-image: url('/Amendment-APIs_027/assests/seamless_wallpaper.png'); */
+  /* opacity: 0.5; */
+}
+
+#container {
+  margin: auto;
+  padding: 0;
+}
+
+.header {
+  background-color: black;
+  color: aliceblue;
+}
+
+.ticker {
+  /* background-color: black; */
+  font-size: small;
+  font-weight: bold;
+  display: flex;
+  height: 20px;
+  width: 40%;
+  animation: marquee 25s linear infinite;
+  /* align-items: center; */
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.header_wrap {
+  display: flex;
+  background-color: #2a2929;
+  margin-top: 10px;
+  height: 30px;
+  /* justify-content: space-around; */
+}
+
+.header_wrap > select {
+  background-color: #2a2929;
+}
+
+.navbar {
+  display: flex;
+  height: 80px;
+  /* border: 2px black solid; */
+  background-color: white;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+.navbar a {
+  color: black;
+  text-decoration: none;
+}
+.navbar img {
+  width: 140px;
+  height: 80px;
+  margin-left: 120px;
+}
+
+.navbar input {
+  width: 250px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid;
+  position: relative;
+}
+/* .icon{
+      border: none;
+      background-color: white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      /* height: 100%; */
+/* } */
+
+.deliverybtn {
+  border-radius: 30px;
+  border-color: #c10e2e;
+  padding: 10px;
+  background-color: #c10e2e;
+  color: white;
+  font-weight: bold;
+}
+.breadcrumb {
+  padding: 10px 20px;
+  /* background-color: #f8f8f8; */
+}
+.breadcrumb a {
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+}
+.container {
+  text-align: center;
+  padding: 40px 20px;
+}
+.container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.category-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  /* background-color: #f8f8f8; */
+}
+.filter-bar div {
+  margin: 10px;
+}
+.filter-bar select {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+.sort-bar {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+.sort-bar a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+.delivery-location {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  margin: 10px;
+}
+
+.location-info {
+  font-size: 14px;
+}
+
+.location-info strong {
+  font-weight: bold;
+}
+
+.items-found {
+  font-size: 14px;
+  align-self: center;
+}
+
+.Shopping {
+  margin-left: 80px;
+  margin-top: 30px;
+  font-size: larger;
+}
+
+.delivery {
+  display: flex;
+  justify-content: space-around;
+}
+.delivery_icon p {
+  display: block;
+  margin-top: -20px;
+  font-size: small;
+}
+
+.reebok_footer {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  background-color: #0b233f;
+  max-width: 1600px;
+  height: 450px;
+}
+.footer1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: -40px;
+}
+
+.help {
+  color: white;
+  margin-left: 120px;
+  padding: 40px;
+}
+
+.help p {
+  font-size: small;
+}
+.about_us {
+  color: white;
+  padding: 40px;
+}
+
+.community {
+  color: white;
+  padding: 40px;
+  margin-left: -10px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.social a {
+  color: white;
+}
+.footer2 {
+  display: block;
+}
+
+.footer2 a {
+  color: white;
+  padding: 90px;
+  font-size: small;
+}
+
+.footer3 {
+  display: inline-flex;
+  color: white;
+  margin-top: 1px;
+}
+#shoe_category {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 60px;
+  margin-top: 30px;
+}
+
+#shoe_category a {
+  color: black;
+  margin-left: 100px;
+  font-weight: 600;
+  font-size: larger;
+  text-decoration: none;
+}
+#shoe_category a:nth-child(5) {
+  color: black;
+  font-size: small;
+  font-weight: 550;
+  margin-left: 280px;
+}
+#shoe_category a:hover {
+  font-size: xx-large;
+  text-decoration: underline;
+  color: #c10e2e;
+}
+
+#card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}

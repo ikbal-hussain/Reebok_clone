@@ -1,3 +1,4 @@
+// Mukul js
 let login = document.getElementById("login-btn");
 let isLogged = JSON.parse(localStorage.getItem("isLogged"));
 
@@ -21,7 +22,54 @@ if (isLogged) {
         window.location.href = "./signup.html";
     });
 }
+// Mukul js End
 
+
+// carousel function
+
+const shoe_category = document.getElementById('shoe_category');
+
+document.addEventListener("DOMContentLoaded", ()=> {
+  fetch("http://localhost:3000/products")
+    .then(response => response.json())
+    .then(product => {
+      const container = document.getElementById("card-container");
+      container.innerHTML = "";
+      product = product.slice(0, 15);
+      product.forEach(products => {
+        
+        if(products.Producttag === "RUNNING SHOES"){
+          const card = document.createElement("div");
+        card.className = "card";
+
+        const img = document.createElement("img");
+        img.src = products.ImageUrl;
+        card.appendChild(img);
+
+        const tag = document.createElement("div");
+        tag.textContent = products.Producttag;
+        card.appendChild(tag);
+
+        const details = document.createElement("div");
+        details.className = "card-details";
+
+        const name = document.createElement("div");
+        name.textContent = products.ProductName;
+        details.appendChild(name);
+
+        const price = document.createElement("div");
+        price.className = "card-price";
+        price.textContent = products.price;
+        details.appendChild(price);
+        card.appendChild(details);
+        container.appendChild(card);
+        }
+      });
+    });
+        
+        
+                
+})
 
 
 // carousel function
@@ -57,33 +105,33 @@ function prevSlide() {
 setInterval(nextSlide, 5000);
 
 // // carousel function
-// let currentIndex2 = 0;
+let currentIndex2 = 0;
 
-// function showSlide(index) {
-//   const slides = document.querySelectorAll(".carousel-item2");
-//   const totalSlides = slides.length;
+function showSlide2(index) {
+  const slides2 = document.querySelectorAll(".carousel-item2");
+  const totalSlides2 = slides2.length;
 
-//   if (index >= totalSlides) {
-//     currentIndex2 = 0;
-//   } else if (index < 0) {
-//     currentIndex2 = totalSlides - 1;
-//   } else {
-//     currentInde2x = index;
-//   }
+  if (index >= totalSlides2) {
+    currentIndex2 = 0;
+  } else if (index < 0) {
+    currentIndex2 = totalSlides2 - 1;
+  } else {
+    currentIndex2 = index;
+  }
 
-//   const offset = -currentIndex2 * 100;
-//   document.querySelector(
-//     ".carousel-inner2"
-//   ).style.transform = `translateX(${offset}%)`;
-// }
+  const offset2 = -currentIndex2 * 100;
+  document.querySelector(
+    ".carousel-inner2"
+  ).style.transform = `translateX(${offset2}%)`;
+}
 
-// function nextSlide() {
-//   showSlide(currentIndex2 + 1);
-// }
+function nextSlide2() {
+  showSlide2(currentIndex2 + 1);
+}
 
-// function prevSlide() {
-//   showSlide(currentIndex2 - 1);
-// }
+function prevSlide2() {
+  showSlide2(currentIndex2 - 1);
+}
 
-// // Optional: Auto-slide
-// setInterval(nextSlide, 5000);
+// Optional: Auto-slide
+setInterval(nextSlide2, 5000);
