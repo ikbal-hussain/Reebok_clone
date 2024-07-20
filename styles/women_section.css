@@ -287,3 +287,12 @@ body {
   width: 100%;
   height: auto;
 }
+
+.card button{
+  position: absolute;
+  margin-left: -60px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  color: black;
+}

@@ -30,6 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
         img.src = products.ImageUrl;
         card.appendChild(img);
 
+        const cart = document.createElement("button");
+        cart.className = "AddToCart";
+        cart.innerHTML =
+          '<span class="material-symbols-outlined">favorite</span>';
+        card.append(cart);
+
         const tag = document.createElement("div");
         tag.textContent = products.Producttag;
         card.appendChild(tag);
@@ -67,8 +73,14 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       showData(WalkingCategory);
     });
+    
+    // // eventlistener for adding products to cart
+    // document.querySelectorAll(".AddToCart").forEach((button) => {
+    //   button.addEventListener("click", (event) => {
+    //     const productId = event.target.
+    //   })
+    // })
   };
-  
 
   fetchData();
 });
