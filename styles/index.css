@@ -34,7 +34,7 @@ body {
         transform: translateX(-100%);
     }
 }
-.header_wrap {
+.header_wrap{
     display: flex;
     background-color: #2a2929;
     margin-top: 10px;

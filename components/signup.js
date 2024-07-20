@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const email = document.getElementById('login-email').value;
         const password = document.getElementById('login-password').value;
-        // const firstName = document.getElementById('firstname').value;
+        const firstName = document.getElementById('firstname').value;
 
         if (!email || !password) {
             alert('Please fill in all fields');
