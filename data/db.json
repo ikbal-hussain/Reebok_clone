@@ -1,12 +1,43 @@
 {
   "users": [
     {
-      "name": "xyz",
-      "username": "ohfowh",
-      "password": "1324235fns",
-      "email": "acad@gmail.com",
-      "contact": 9432221142,
-      "gender": "Female"
+      "id": "88b7",
+      "firstName": "Mukul ",
+      "lastName": "K",
+      "email": "m@gmail.com",
+      "password": "1234",
+      "dob": {
+        "day": "1",
+        "month": "2",
+        "year": "3"
+      },
+      "gender": "FEMALE"
+    },
+    {
+      "id": "60b9",
+      "firstName": "john",
+      "lastName": "deo",
+      "email": "j@gmail.com",
+      "password": "1234",
+      "dob": {
+        "day": "2",
+        "month": "3",
+        "year": "4"
+      },
+      "gender": "MALE"
+    },
+    {
+      "id": "885a",
+      "firstName": "Ikbal",
+      "lastName": "H",
+      "email": "i@gmail.com",
+      "password": "123",
+      "dob": {
+        "day": "1",
+        "month": "2",
+        "year": "3"
+      },
+      "gender": "MALE"
     }
   ],
   "products": [

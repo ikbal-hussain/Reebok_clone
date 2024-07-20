@@ -1,3 +1,31 @@
+// Mukul js
+let login = document.getElementById("login-btn");
+let isLogged = JSON.parse(localStorage.getItem("isLogged"));
+
+// Create an element to show the user's first name
+let userNameDisplay = document.createElement("span");
+userNameDisplay.id = "user-name";
+login.parentNode.insertBefore(userNameDisplay, login);
+
+if (isLogged) {
+    // Update UI to reflect logged-in status
+    userNameDisplay.innerHTML = `Hello, ${isLogged.firstName}`;
+    login.innerHTML = "Log out";
+    login.addEventListener("click", () => {
+        localStorage.removeItem('isLogged');
+        window.location.href = "./signup.html";
+    });
+} else {
+    userNameDisplay.innerHTML = "";
+    login.innerHTML = "Login";
+    login.addEventListener("click", () => {
+        window.location.href = "./signup.html";
+    });
+}
+// Mukul js End
+
+
+// carousel function
 
 const shoe_category = document.getElementById('shoe_category');
 
@@ -42,12 +70,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
         
                 
 })
-
-const showData = async(data) => {
-  const shoe_category = document.getElementById("shoe_category");
-        
-
-}
 
 
 // carousel function
