@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="icon" type="image/x-icon" href="assests/high_res_favicon.ico">
+    
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #d48300;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        form label, form input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button{
+             padding: 10px;
+             border-radius: 5px;
+             margin: 10px;
+             border: none;
+             background-color:green;
+             color: white;
+             font-weight: bold;
+        }
+        #editBtn{
+            padding: 10px;
+             border-radius: 5px;
+             margin: 10px;
+             border: none;
+             background-color:rgb(31, 223, 31);
+             color: white;
+             font-weight: bold;   
+        }
+        #deleteBtn{
+            padding: 10px;
+             border-radius: 5px;
+             margin: 10px;
+             border: none;
+             background-color:rgb(255, 0, 0);
+             color: white;
+             font-weight: bold;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Page</h1>
+        <div id="user-section">
+            <h2>Users</h2>
+            <table id="user-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>DOB</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="product-section">
+            <h2>Products</h2>
+            <button onclick="showAddProductForm()">Add Product</button>
+            <table id="product-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Tag</th>
+                        <th>Price</th>
+                        <th>Discount</th>
+                        <th>Gender</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="form-title">Add Product</h3>
+            <form id="product-form">
+                <input type="hidden" id="product-id">
+                <label for="product-image">Image URL:</label>
+                <input type="text" id="product-image" required>
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" required>
+                <label for="product-tag">Product Tag:</label>
+                <input type="text" id="product-tag" required>
+                <label for="product-price">Price:</label>
+                <input type="text" id="product-price" required>
+                <label for="product-discount">Discount:</label>
+                <input type="text" id="product-discount" required>
+                <label for="product-gender">Gender:</label>
+                <input type="text" id="product-gender" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="components/admin.js"></script>
+</body>
+</html>

@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Cart</title>
+    <link rel="icon" type="image/x-icon" href="assests/high_res_favicon.ico">
+   
+
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
       * {
@@ -24,7 +28,7 @@
         display: flex;
         justify-content: flex-end;
         gap: 15px;
-        font-size: 24px;
+        font-size: 20px;
         box-shadow: rgba(0, 5, 5, 0.25) 0px 25px 50px -12px;
         margin-bottom: 4px;
       }
@@ -91,7 +95,6 @@
       #bottom-banner div{
          /* display: block; */
          /* width: 50px; */
-         /* border: 1px solid; */
          margin: 5px;
          text-align: center;
       }
@@ -197,7 +200,7 @@
            border: none;
            font-weight: bold;
            color:white;
-           background-color:black;
+           background-color: black;
            cursor: pointer;
       }
       .size-quantity-div{
@@ -218,14 +221,38 @@
          justify-content: center;
          align-items: center;
       }
+      .removeBtn:hover{
+        background-color:#c10e2e;
+      }
+      #wallet>img{
+        height: 43px;
+        margin-right: 7px;
+      }
+      #cart-navbar span{
+         border: 1px solid rgb(222, 187, 149);
+         border-radius: 5px;
+         padding-left: 5px;
+         padding-right: 15px;
+         display: flex;
+         justify-content: center;
+      }
+      #wallet{
+        display: flex;
+        align-items: end;
+      }
     </style>
   </head>
   <body>
     <div id="cart-container">
       <nav id="cart-navbar">
+        <span id="wallet"> 
+          <img src="assests/wallet logo.jpg" alt="prev icon">
+          My Wallet
+        </span>
         <span id="wishlistBtn"> 
           <img src="assests/wishlist-cart-page-images (7).png" alt="prev icon"> WishList 
         </span>
+       
         <span id="contactUs"> 
           <img src="assests/contact-cart-page-images (1).png" alt="prev icon">Contact Us
         </span>
@@ -259,7 +286,7 @@
              <div id="payable-amount">
               <span><p style="margin-bottom: 0px;">Payable Amount</p>
               <p style="font-size:medium; font-weight: normal; margin-top: 0px;">(Includes Tax)</p></span>
-              <span id="totalPayableAmount">₹ 1559</span>
+              <span id="totalPayableAmount">₹ 0</span>
              </div>
              <button id="checkoutBtn"> CHECKOUT</button>
           </div>
@@ -281,6 +308,6 @@
     </div>
   </body>
 </html>
-<script type="module" src="components/cart.js">
+<script src="components/cart.js">
 
 </script>

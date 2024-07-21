@@ -24,8 +24,12 @@ header button {
     background-color: #ff6200;
     border: none;
     color: white;
-    padding: 0.5em 1em;
+    padding: 0.9em 5em;
     cursor: pointer;
+    align-self: flex-start;
+    border-radius: 4px;
+    font-weight: bold;
+    /* margin-bottom: 10px; */
 }
 
 header button:hover {
@@ -103,7 +107,7 @@ main {
     margin: 0.5em 0 0.2em;
 }
 
-#checkoutForm input {
+#checkoutForm input, #address {
     padding: 0.5em;
     margin-bottom: 1em;
     border: 1px solid #ccc;
@@ -114,12 +118,28 @@ main {
     background-color: #ff6200;
     border: none;
     color: white;
-    padding: 0.7em 1em;
+    padding: 0.9em 5em;
     cursor: pointer;
     align-self: flex-start;
     border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 #checkoutForm button:hover {
     background-color: #e55d00;
+}
+#checkoutForm button:active {
+    background-color: #ac4d0d;
+}
+#confirmOrderBtn, #cancelOrderBtn{
+    background-color: #ff6200;
+    border: none;
+    color: white;
+    padding: 0.9em 5em;
+    cursor: pointer;
+    align-self: flex-start;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }

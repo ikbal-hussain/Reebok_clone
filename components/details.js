@@ -1,11 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
 });
+let sampleUser1 = {
+    "id": "518d",
+    "firstName": "Mukul ",
+    "lastName": "K",
+    "email": "m@gmail.com",
+    "password": "123",
+    "dob": {
+      "day": "2",
+      "month": "5",
+      "year": "2001"
+    },
+    "gender": "MALE"
+  }
 
-let fetchURL = `http://localhost:3000`
+let apiURL = `https://mock-reebok-api.onrender.com`
 
 function fetchProducts() {
-    fetch('http://localhost:3000/products')
+    fetch(`${apiURL}/products`)
         .then(response => response.json())
         .then(products => {
             const productId = getProductIdFromURL();
@@ -18,7 +31,7 @@ function fetchProducts() {
 
 function getProductIdFromURL() {
     const urlParams = new URLSearchParams(window.location.search);
-    return parseInt(urlParams.get('productId')) || 5
+    return parseInt(urlParams.get('productId')) || 131
 }
 
 function renderProductDetails(product) {
@@ -41,8 +54,9 @@ function renderProductDetails(product) {
 }
 
 function addToCart(product) {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser')) || 1;
-    fetch(`http://localhost:3000/users/${currentUser}`)
+    const users = JSON.parse(localStorage.getItem('users')) || sampleUser1;
+    let currentUser = users.id
+    fetch(`${apiURL}/users/${currentUser}`)
         .then(response => response.json())
         .then(user => {
             if (!user.cart) {
@@ -52,7 +66,7 @@ function addToCart(product) {
             if (!productExists) {
                 user.cart.push(product);
             }
-            return fetch(`http://localhost:3000/users/${currentUser}`, {
+            return fetch(`${apiURL}/users/${currentUser}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -69,8 +83,9 @@ function addToCart(product) {
 }
 
 function addToWishlist(product) {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser')) || 1;
-    fetch(`http://localhost:3000/users/${currentUser}`)
+    const users = JSON.parse(localStorage.getItem('users')) || sampleUser1;
+    let currentUser = users.id
+    fetch(`${apiURL}/users/${currentUser}`)
         .then(response => response.json())
         .then(user => {
             if (!user.wishlist) {
@@ -80,7 +95,7 @@ function addToWishlist(product) {
             if (!productExists) {
                 user.wishlist.push(product);
             }
-            return fetch(`http://localhost:3000/users/${currentUser}`, {
+            return fetch(`${apiURL}/users/${currentUser}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
