@@ -39,13 +39,9 @@ body {
     background-color: #2a2929;
     margin-top: 10px;
     height: 30px;
-    /* justify-content: space-around; */
+    justify-content: space-around;
 }
-.header_wrap>#user-name{
-    font-size: 13px;
-    margin-top: 8px;
-    margin-right: 5px;
-  }
+
 .header_wrap a{
     color: white;
 }
@@ -304,4 +300,37 @@ body {
 .card img{
     width: 100%;
     height: auto;
+}
+
+@media(max-width: 1024px){
+    .navbar{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* gap: 10px; */
+        margin-bottom: 60px;
+    }
+    .navbar img {
+        margin-left: -1px
+    }
+    .categories {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .Shopping img{
+        width: 90%;
+    }
+    #shoe_category{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    #card-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        
+    }
+    .card{
+        width:280px;
+        
+    }
 }
