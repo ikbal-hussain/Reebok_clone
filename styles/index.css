@@ -41,7 +41,11 @@ body {
     height: 30px;
     /* justify-content: space-around; */
 }
-
+.header_wrap>#user-name{
+    font-size: 13px;
+    margin-top: 8px;
+    margin-right: 5px;
+  }
 .header_wrap a{
     color: white;
 }
