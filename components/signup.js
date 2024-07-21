@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             gender: genderElement.value
         };
 
-        fetch('http://localhost:3000/users', {
+        fetch('https://mock-reebok-api.onrender.com/users', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        fetch(`http://localhost:3000/users?email=${encodeURIComponent(email)}`)
+        fetch(`https://mock-reebok-api.onrender.com/users?email=${encodeURIComponent(email)}`)
         .then(response => response.json())
         .then(users => {
             const user = users[0];
@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Login successful!');
                 loginForm.reset();
                 localStorage.setItem("isLogged", JSON.stringify({ id: user.id, email: user.email, firstName: user.firstName }));
+                localStorage.setItem("users", JSON.stringify(user));
                 window.location.href = "./index.html";
             } else {
                 alert('Invalid email or password');
