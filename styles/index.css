@@ -280,7 +280,7 @@ body {
     margin-left: 280px;    
 }
 #shoe_category a:hover{
-    font-size: xx-large;
+    /* font-size: xx-large; */
     text-decoration: underline;
     color: #c10e2e;
 }
