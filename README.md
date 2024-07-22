@@ -6,8 +6,7 @@ SportStyle is an interactive e-commerce platform developed to showcase and manag
 Frontend | Backend
 
 ## Deployed Link
-<h3><a href="https://sportstyle-reebok-inspired.netlify.app/">Live Demo :
-Infohub</a></h3>
+<h3><a href="https://sportstyle-reebok-inspired.netlify.app/">Live Demo : SportStyle</a></h3>
 
 ## Video Walkthrough of the project
 <a href="https://www.youtube.com/watch?v=8w3oPWJzHdU">project
@@ -20,8 +19,7 @@ presentation</a>
 - Infinite scroll: For smooth user experience
 - Bookmark: Save product to see it later
 
-![image](https://github.com/rajatsah95/Tesla_Techies_038/blob/main/b361.jpg)
-![image](https://github.com/rajatsah95/Tesla_Techies_038/blob/main/b362.jpg)
+
 
 
 
