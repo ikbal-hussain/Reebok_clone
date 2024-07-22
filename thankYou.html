@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You</title>
+    <link rel="icon" type="image/x-icon" href="assests/high_res_favicon.ico">
+    <style>
+        
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: #333;
+      }
+      #thankyou-container{
+          width: 1400px;
+          max-width: 1300px ;
+          margin: auto;
+
+          display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+      }
+
+      header {
+        background-color: #4caf50;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      main {
+        text-align: center;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        /* max-width: 1400px; */
+        /* margin-left: auto; */
+        margin-top: 20px;
+      }
+
+      p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+
+      #homePageBtn {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      #homePageBtn:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="thankyou-container">
+      <header>
+        <h1>Thank You for Your Order!</h1>
+      </header>
+      <main>
+        <p>
+          Your order has been placed successfully. You will receive a
+          confirmation email shortly.
+        </p>
+        <button id="homePageBtn">Back to Home</button>
+      </main>
+    </div>
+
+    
+  </body>
+</html>
+<script>
+    document.querySelector("#homePageBtn").addEventListener("click", () => {
+      window.location.href = "index.html"; // Adjust the file name as needed
+    });
+  </script>

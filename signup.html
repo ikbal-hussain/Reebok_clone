@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up / Login Form</title>
+    <link rel="stylesheet" href="./styles/signup.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ALMOST THERE!</h1>
+        <div class="toggle-container">
+            <button id="toggleButton">Switch to Login</button>
+        </div>
+        <div id="signupSection">
+            <h2>How shall we address you?</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="firstname">FIRST NAME</label>
+                    <input type="text" id="firstname" placeholder="Enter your firstname" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">LAST NAME</label>
+                    <input type="text" id="lastname" placeholder="Enter your lastname" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">EMAIL ADDRESS</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email" required>
+                    <small>You'll receive receipts and notifications with this email address.</small>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">PASSWORD</label>
+                    <input type="password" id="signup-password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group">
+                    <label>DATE OF BIRTH</label>
+                    <div class="dob-inputs">
+                        <input type="number" id="day" placeholder="Day" required>
+                        <input type="number" id="month" placeholder="Month" required>
+                        <input type="number" id="year" placeholder="Year" required>
+                    </div>
+                    <small>You can only edit your DOB once every 365 days.</small>
+                </div>
+                <div class="form-group">
+                    <label>GENDER</label>
+                    <div class="gender-options">
+                        <label><input type="radio" name="gender" value="MALE"> MALE</label>
+                        <label><input type="radio" name="gender" value="FEMALE"> FEMALE</label>
+                        <label><input type="radio" name="gender" value="OTHERS" checked> OTHERS</label>
+                    </div>
+                </div>
+                <button type="submit" id="signupButton">SIGN UP</button>
+            </form>
+        </div>
+        <div id="loginSection" style="display: none;">
+            <h2>Welcome back!</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="login-email">EMAIL ADDRESS</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">PASSWORD</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" id="loginButton">LOG IN</button>
+            </form>
+        </div>
+    </div>
+    <script src="./components/signup.js"></script>
+</body>
+</html>

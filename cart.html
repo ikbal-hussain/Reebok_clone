@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart</title>
+    <link rel="icon" type="image/x-icon" href="assests/high_res_favicon.ico">
+   
+
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
+      * {
+        font-family: "Heebo", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
+      #cart-container {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #cart-navbar {
+        height: 50px;
+        background-color: white;
+        /* border-radius: 20px; */
+        padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        font-size: 20px;
+        box-shadow: rgba(0, 5, 5, 0.25) 0px 25px 50px -12px;
+        margin-bottom: 4px;
+      }
+      #cart-navbar span {
+        font-weight: bold;
+      }
+      #cart-navbar span{
+          display: flex;
+          align-items: center;
+      }
+      #cart-section {
+        height: auto;
+        display: flex;
+        gap: 20px;
+        background-color: #f6f6f6;
+        padding-bottom: 190px;
+      }
+      #left-section {
+        width: 60%;
+        background-color: white;
+        /* height: 700px; */
+        padding: 20px;
+        padding-left: 40px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      }
+      #left-section>p {
+        font-weight: bold;
+        background-color: #e6a757;
+        padding: 5px;
+      }
+      #homePageBtn {
+       display: flex;
+       align-items: center;
+      }
+      #homePageBtn:hover {
+       display: flex;
+       align-items: center;
+       cursor: pointer;
+      }
+      #right-section {
+        width: 31%;
+        background-color: #f6f6f6;
+        height: 500px;
+        padding: 30px;
+      }
+      #summary-container{
+        height: 250px;
+         background-color:white;
+         border-radius: 20px;
+         padding: 20px;
+         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      #bottom-banner{
+        /* height: 250px; */
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        /* justify-content: space-around; */
+         background-color:white;
+         border-radius: 20px;
+         padding: 20px;
+         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      #bottom-banner div{
+         /* display: block; */
+         /* width: 50px; */
+         margin: 5px;
+         text-align: center;
+      }
+      #bottom-banner div img{
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         margin-bottom: 11px;
+      }
+      #bag-total{
+         margin-bottom: 8px;
+      }
+      #inside-bag-total-1{
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+      }
+      #inside-bag-total-2{
+        display: flex;
+        justify-content: space-between;
+        
+      }
+      #payable-amount{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        font-size: large;
+        border-top: 1px solid #dcdcdc;
+        
+      }
+      #checkoutBtn{
+         width: 100%;
+         padding: 15px;
+         border-radius: 15px;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        border: none;
+        margin-top: 20px;
+      }
+      #checkoutBtn:hover{
+        cursor: pointer;
+       opacity: 0.8;
+      }
+      #checkoutBtn:active{
+        opacity:1;
+      }
+      #cart-navbar span:hover{
+          cursor: pointer;
+          opacity: 0.8;
+      }
+      #cart-navbar span:active{
+          opacity: 1.5;
+      }
+      .cart-item{
+        height: 200px;
+        background-color:#f6f6f6;
+        padding: 15px;
+        margin: 10px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .cart-item:hover{
+        opacity: 0.9;
+          /* transform: scale(1.01); */
+      }
+      .cart-item img{
+       width: 130px;
+       height: 193px;
+      }
+      .title-price-div{
+        display: flex;
+        justify-content: space-between;
+        width: 550px;
+      }
+      #size-select, #quantity-select{
+        padding: 10px;
+          width: 75px;
+          height: 40px;
+          border-radius: 5px;
+      }
+      .size p{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+      #cart-buttons{
+        display: flex;
+        justify-content: end;
+        gap: 10px;
+      }
+      #cart-buttons button{
+           padding: 12px;
+           border-radius: 10px;
+           border: none;
+           font-weight: bold;
+           color: #6b6f79;
+           background-color: white;
+      }
+      #cart-buttons button:hover{
+           padding: 12px;
+           border-radius: 10px;
+           border: none;
+           font-weight: bold;
+           color:white;
+           background-color: black;
+           cursor: pointer;
+      }
+      .size-quantity-div{
+        display: flex;
+        gap: 10px;
+      }
+      .cart-item div, .cart-item p {
+            margin: 0px;
+            padding: 3px;
+            padding-left: 0px;
+            margin-left: 0px;
+      }
+      #cart-footer{
+         height: 70px;
+         background-color: black;
+         color: white;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      .removeBtn:hover{
+        background-color:#c10e2e;
+      }
+      #wallet>img{
+        height: 43px;
+        margin-right: 7px;
+      }
+      #cart-navbar span{
+         border: 1px solid rgb(222, 187, 149);
+         border-radius: 5px;
+         padding-left: 5px;
+         padding-right: 15px;
+         display: flex;
+         justify-content: center;
+      }
+      #wallet{
+        display: flex;
+        align-items: end;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cart-container">
+      <nav id="cart-navbar">
+        <span id="wallet"> 
+          <img src="assests/wallet logo.jpg" alt="prev icon">
+          My Wallet
+        </span>
+        <span id="wishlistBtn"> 
+          <img src="assests/wishlist-cart-page-images (7).png" alt="prev icon"> WishList 
+        </span>
+       
+        <span id="contactUs"> 
+          <img src="assests/contact-cart-page-images (1).png" alt="prev icon">Contact Us
+        </span>
+      </nav>
+    
+      <section id="cart-section">
+        <div id="left-section">
+          <span id="homePageBtn">
+            <img src="assests/prev-icon-cart-page-images(2).png" alt="prev icon"><b>Home Page</b>
+          </span>
+          <h1>MY SHOPPING BAG</h1>
+          <hr />
+          <p>STANDARD DELIVERY</p>
+          <div id="cart-items-container">
+            
+          </div>
+        </div>
+        <div id="right-section">
+          <h1>ORDER SUMMARY</h1>
+          <div id="summary-container">
+             <div id="bag-total">
+              <div id="inside-bag-total-1">
+                <span id="bagTotal">Bag Total</span>
+                <span id="bagTotalPrice"></span>
+               </div>
+              <div id="inside-bag-total-2">
+                <span>Shipping</span>
+                <span>Free</span>
+               </div>
+             </div>
+             <div id="payable-amount">
+              <span><p style="margin-bottom: 0px;">Payable Amount</p>
+              <p style="font-size:medium; font-weight: normal; margin-top: 0px;">(Includes Tax)</p></span>
+              <span id="totalPayableAmount">₹ 0</span>
+             </div>
+             <button id="checkoutBtn"> CHECKOUT</button>
+          </div>
+          <div id="bottom-banner">
+             <div> <img src="assests/banner-logo.png" alt="logo">Secure Checkout</div>
+             <div><img src="assests/banner-logo (1).png" alt="logo">Easy returns &amp exchanges</div>
+             <div><img src="assests/banner-logo (2).png" alt="logo">Free shipping</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="top-picks">
+         <h1 style="text-align: center;" >TOP PICKS FOR YOU</h1>
+           <h4  style="text-align: center;" >Explore more products to see top picks curated for you</h4>
+      </section>
+      <footer id="cart-footer">
+        <p>&copy; 2024 SportStyle. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
+<script src="components/cart.js">
+
+</script>

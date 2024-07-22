@@ -1,0 +1,145 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header button {
+    background-color: #ff6200;
+    border: none;
+    color: white;
+    padding: 0.9em 5em;
+    cursor: pointer;
+    align-self: flex-start;
+    border-radius: 4px;
+    font-weight: bold;
+    /* margin-bottom: 10px; */
+}
+
+header button:hover {
+    background-color: #e55d00;
+}
+
+/* Main Content */
+main {
+    padding: 2em;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2em;
+}
+
+/* Order Summary Section */
+#orderSummary {
+    background-color: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+#orderSummary h2 {
+    margin-top: 0;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.order-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 1em;
+}
+
+.order-item div {
+    flex: 1;
+}
+
+.order-item p {
+    margin: 0.5em 0;
+}
+
+#orderTotal {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Payment Details Section */
+#paymentDetails {
+    background-color: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+#paymentDetails h2 {
+    margin-top: 0;
+}
+
+#checkoutForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#checkoutForm label {
+    margin: 0.5em 0 0.2em;
+}
+
+#checkoutForm input, #address {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#checkoutForm button {
+    background-color: #ff6200;
+    border: none;
+    color: white;
+    padding: 0.9em 5em;
+    cursor: pointer;
+    align-self: flex-start;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#checkoutForm button:hover {
+    background-color: #e55d00;
+}
+#checkoutForm button:active {
+    background-color: #ac4d0d;
+}
+#confirmOrderBtn, #cancelOrderBtn{
+    background-color: #ff6200;
+    border: none;
+    color: white;
+    padding: 0.9em 5em;
+    cursor: pointer;
+    align-self: flex-start;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

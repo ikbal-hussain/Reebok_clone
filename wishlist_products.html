@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist Page</title>
+    <link rel="stylesheet" href="./styles/wishlist_products.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <a href="#person">
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+                </a>
+                <p class="name" id="user-name">User</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">My Orders</a></li>
+                    <li><a href="#">My Credits</a></li>
+                    <li><a href="#">Loyalty Points</a></li>
+                    <li><a href="#">Address Book</a></li>
+                    <li><a href="#">Saved Cards</a></li>
+                    <li><a href="#" class="active">Wishlist</a></li>
+                    <li><a href="#">Shop Preferences</a></li>
+                    <li><a href="#">My Reviews</a></li>
+                    <li><a href="#">Log Out</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="wishlist">
+            <h1>Wish List</h1>
+            <div class="products" id="wishlist-products">
+                <!-- Wishlist products will be dynamically inserted here -->
+            </div>
+        </main>
+    </div>
+    <script src="./components/wishlist.js"></script>
+</body>
+</html>

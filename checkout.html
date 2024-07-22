@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles/checkout.css">
+    <link rel="icon" type="image/x-icon" href="assests/high_res_favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+        <button id="backToCartBtn">Back to Cart</button>
+    </header>
+    <main>
+        <section id="orderSummary">
+            <h2>Order Summary</h2>
+            <div id="orderItemsContainer"></div>
+            <p>Total: ₹ <span id="orderTotal">0</span></p>
+        </section>
+        <section id="paymentDetails">
+            <h2>Payment Details</h2>
+            <form id="checkoutForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="address">Address:</label>
+                <!-- <input type="text" id="address" required> -->
+                <textarea id="address" name="address" rows="4" cols="50" ></textarea><br>
+                <label for="walletPassword">Account Password:</label>
+                <input type="password" id="walletPassword" required>
+                <button type="button" id="payFromWalletBtn">Pay from Wallet</button>
+            </form>
+            <div id="walletSummary">
+               <h2>SS Wallet</h2>
+                <p>Balance: <span  style="color: rgb(238, 110, 31);" id="walletBalance">0</span> SS Coins</p>
+                <h3>Wallet Usage &amp Order History</h3>
+                <div id="walletHistoryContainer"></div>
+            </div>
+        </section>
+        <section id="confirmOrderSection" style="display: none;">
+            <h2 style="color: rgb(151, 142, 142);">Confirm Order</h2>
+            <button style="display: block;" id="confirmOrderBtn">Confirm Order</button>
+            <button style="display: block;" id="cancelOrderBtn">Cancel Order</button>
+        </section>
+    </main>
+    <script src="components/checkout.js"></script>
+</body>
+</html>
