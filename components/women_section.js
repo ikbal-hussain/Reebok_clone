@@ -118,3 +118,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetchData();
 });
+
+//ikbal added
+let homePageLogo = document.getElementById("homePageLogo")
+homePageLogo.addEventListener('click', ()=>{
+      window.location.href = index.html
+})

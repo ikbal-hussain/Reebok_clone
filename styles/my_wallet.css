@@ -12,7 +12,7 @@ body {
 
 header {
     width: 100%;
-    background-color: #007bff;
+    background-color: #e6a757;
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -27,7 +27,7 @@ header {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background-color: #f44336;
+    background-color: #c40c2e;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;

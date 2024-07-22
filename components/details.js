@@ -1,21 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
 });
+
 let sampleUser1 = {
     "id": "518d",
-    "firstName": "Mukul ",
+    "firstName": "Mukul",
     "lastName": "K",
     "email": "m@gmail.com",
     "password": "123",
     "dob": {
-      "day": "2",
-      "month": "5",
-      "year": "2001"
+        "day": "2",
+        "month": "5",
+        "year": "2001"
     },
     "gender": "MALE"
-  }
+};
 
-let apiURL = `https://mock-reebok-api.onrender.com`
+let apiURL = `https://mock-reebok-api.onrender.com`;
 
 function fetchProducts() {
     fetch(`${apiURL}/products`)
@@ -31,7 +32,7 @@ function fetchProducts() {
 
 function getProductIdFromURL() {
     const urlParams = new URLSearchParams(window.location.search);
-    return parseInt(urlParams.get('productId')) || 131
+    return parseInt(urlParams.get('id')) || 166;
 }
 
 function renderProductDetails(product) {
@@ -45,7 +46,7 @@ function renderProductDetails(product) {
                 <p class="discount">Discount: ${product.discount}</p>
                 <p>Gender: ${product.gender}</p>
                 <p class="sizes">Sizes: M, L, XL</p>
-                ${product.Producttag === "RUNNING SHOES" ? ' <h5>Scan QR code to determine your size with AI</h5><img src="assests/QR Code Primeai.png" alt="QR Code">' : ''}
+                ${product.Producttag === "RUNNING SHOES" ? '<h5>Scan QR code to determine your size with AI</h5><img src="assests/QR Code Primeai.png" alt="QR Code">' : ''}
                 <button class="add-to-cart" onclick='addToCart(${JSON.stringify(product)})'>Add to Bag</button>
                 <button class="add-to-wishlist" onclick='addToWishlist(${JSON.stringify(product)})'>Add to Wishlist</button>
             </div>
@@ -55,7 +56,7 @@ function renderProductDetails(product) {
 
 function addToCart(product) {
     const users = JSON.parse(localStorage.getItem('users')) || sampleUser1;
-    let currentUser = users.id
+    let currentUser = users.id;
     fetch(`${apiURL}/users/${currentUser}`)
         .then(response => response.json())
         .then(user => {
@@ -76,15 +77,15 @@ function addToCart(product) {
         })
         .then(response => response.json())
         .then(data => {
-            console.log('Cart updated', data)
-            alert("Added to cart")
+            console.log('Cart updated for', data.email, 'updated cart: ', data.cart);
+            alert("Added to cart");
         })
         .catch(error => console.error('Error:', error));
 }
 
 function addToWishlist(product) {
     const users = JSON.parse(localStorage.getItem('users')) || sampleUser1;
-    let currentUser = users.id
+    let currentUser = users.id;
     fetch(`${apiURL}/users/${currentUser}`)
         .then(response => response.json())
         .then(user => {
@@ -105,9 +106,9 @@ function addToWishlist(product) {
         })
         .then(response => response.json())
         .then(data => {
-            console.log('Wishlist updated', data)
-            alert("Added to wishlist")
-        } )
+            console.log('Wishlist updated', data);
+            alert("Added to wishlist");
+        })
         .catch(error => console.error('Error:', error));
 }
 
@@ -124,6 +125,9 @@ function renderMoreLikeThis(products, currentProduct) {
             <p>${product.ProductName}</p>
             <p class="price">Price: ${product.price}</p>
         `;
+        productItem.addEventListener('click', () => {
+            window.location.href = `details.html?id=${product.id}`;
+        });
         moreLikeThisDiv.appendChild(productItem);
     });
 }

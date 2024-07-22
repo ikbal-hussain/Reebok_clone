@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const month = document.getElementById('month').value;
         const year = document.getElementById('year').value;
         const genderElement = document.querySelector('input[name="gender"]:checked');
+        const uniqueId = Math.floor(Math.random() * 1000) + 1;
+        console.log(uniqueId)
 
         if (!firstName || !lastName || !email || !password || !day || !month || !year || !genderElement) {
             alert('Please fill in all fields');
@@ -36,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const formData = {
+            id: uniqueId,
             firstName,
             lastName,
             email,
@@ -73,6 +76,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!email || !password) {
             alert('Please fill in all fields');
+            return;
+        }
+        if (email == 'admin@gmail.com' && password == 'admin') {
+           window.location.href = `admin.html`
             return;
         }
 

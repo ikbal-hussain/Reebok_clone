@@ -11,16 +11,15 @@ let sampleUser1 = {
      "year": "2001"
    },
    "gender": "MALE"
- }
+ };
+
 document.addEventListener('DOMContentLoaded', () => {
    let homePageBtn = document.querySelector("#homePageBtn");
-   console.log(homePageBtn);
    homePageBtn.addEventListener('click', () => {
        window.location.href = "index.html";
    });
 
    let wishlistBtn = document.querySelector("#wishlistBtn");
-   console.log(wishlistBtn);
    wishlistBtn.addEventListener('click', () => {
        window.location.href = "wishlist.html";
    });
@@ -29,27 +28,25 @@ document.addEventListener('DOMContentLoaded', () => {
    contactUs.addEventListener('click', () => {
        window.location.href = "contactUs.html";
    });
+   
    let wallet = document.querySelector("#wallet");
    wallet.addEventListener('click', () => {
        window.location.href = "my_wallet.html";
    });
 
-   
-
-  
-   let currentUser = JSON.parse(localStorage.getItem("currentUser")) || sampleUser1.id;
+   let currentUser = JSON.parse(localStorage.getItem("users")).id || sampleUser1.id;
 
    showCartItems();
 
    async function showCartItems() {
+       console.log("showing cart items");
        let cartItemsContainer = document.querySelector("#cart-items-container");
        cartItemsContainer.innerHTML = "";
-       let data = await fetchCartItems();
+       let data = await fetchUser();
 
        if (!data.cart) {
            alert("Cart is Empty. Add items");
        } else {
-           localStorage.setItem('cartItems', JSON.stringify(data.cart)) //newly added
            let cartSize = data.cart.length;
            let shoppingBag = document.querySelector("#left-section>h1");
            shoppingBag.innerHTML = `MY SHOPPING BAG(${cartSize})`;
@@ -109,9 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
            });
 
            document.querySelectorAll(".removeBtn").forEach(button => {
-               button.addEventListener('click', () => {
+               button.addEventListener('click', async () => {
                    let cartItemId = button.getAttribute("data-id");
-                   removeFunction(cartItemId);
+                   await removeFunction(cartItemId);
+                   await showCartItems();
                });
            });
 
@@ -127,54 +125,38 @@ document.addEventListener('DOMContentLoaded', () => {
        bagTotalPrice.innerHTML = `₹${bagTotalSum}`;
        let totalPayableAmount = document.querySelector("#totalPayableAmount");
        totalPayableAmount.innerHTML = `₹${bagTotalSum}`;
-       localStorage.setItem("bagTotalSum", JSON.stringify(bagTotalSum))
+       localStorage.setItem("bagTotalSum", JSON.stringify(bagTotalSum));
    }
 
-   async function fetchCartItems() {
+   async function fetchUser() {
        let data = await fetch(`${apiURL}/users/${currentUser}`);
        let res = await data.json();
+       console.log("fetching user, user is", res);
        return res;
    }
 
    let checkoutBtn = document.querySelector("#checkoutBtn");
    checkoutBtn.addEventListener('click', () => {
-    let bagTotalSum = JSON.parse(localStorage.getItem('bagTotalSum')) || 0
-    if(bagTotalSum > 0){
-       window.location.href = 'checkout.html';
-    }
-      
+       console.log("checkout button clicked");
+       let bagTotalSum = JSON.parse(localStorage.getItem('bagTotalSum')) || 0;
+       if (bagTotalSum > 0) {
+           window.location.href = 'checkout.html';
+       }
    });
 
    async function removeFunction(cartItemId) {
-       let user = await fetchCartItems();
-       let cartArray = user.cart;
-       cartArray = cartArray.filter(item => {
-           return cartItemId != item.id;
-       });
-       console.log(cartArray);
+       console.log("removing cart item of id", cartItemId);
+       let user = await fetchUser();
+       let cartArray = user.cart.filter(item => cartItemId != item.id);
 
-       fetch(`${apiURL}/users/${currentUser}`, {
+       await fetch(`${apiURL}/users/${currentUser}`, {
            method: 'PATCH',
            headers: {
                'Content-Type': 'application/json',
            }, 
            body: JSON.stringify({"cart": cartArray})
-       })
-       .then(response => {
-           if (!response.ok) {
-               throw new Error('Network response was not ok');
-           }
-           return response.json();
-       })
-       .then(data => {
-           console.log('Delete successful:', data);
-       })
-       .catch(error => {
-           console.error('There was a problem with the fetch operation:', error);
        });
 
-       showCartItems();
+       localStorage.removeItem('cartItems');
    }
 });
-
-

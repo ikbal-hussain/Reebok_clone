@@ -8,7 +8,6 @@ body {
 
 .container {
     display: flex;
-    /* max-width: 1200px; */
     max-width: 100%;
     margin: auto;
 }
@@ -46,14 +45,15 @@ body {
 .nav-menu {
     margin-top: 20px;
 }
-.nav-menu>ul>li>a:hover{
+
+.nav-menu>ul>li>a:hover {
     background-color: #ff5722;
     color: white;
     border-radius: 5px;
     transform: scale(1.1);
     transition: transform 0.2s ease;
-    
 }
+
 .nav-menu ul {
     list-style-type: none;
     padding: 0;
@@ -107,12 +107,14 @@ body {
     background-color: #ff5722;
     color: #fff;
 }
-.filters button:hover{
+
+.filters button:hover {
     background-color: #ff5722;
 }
+
 .products {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
@@ -125,7 +127,8 @@ body {
     width: 250px;
     text-align: center;
 }
-.product-card:hover{
+
+.product-card:hover {
     transform: scale(1.02);
     transition: transform 0.2s ease;
     text-decoration: none;
@@ -178,4 +181,18 @@ body {
     top: 10px;
     right: 10px;
     font-size: 18px;
+}
+
+.add-to-bag-button {
+    border: none;
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.add-to-bag-button:hover {
+    background-color: #e64a19;
 }
