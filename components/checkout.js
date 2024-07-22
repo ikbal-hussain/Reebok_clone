@@ -69,9 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function fetchOrderItemsFromLocalStorage() {
-        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        displayOrderSummary(cartItems);
+    async function fetchUser() {
+        let currentUser = fetchUserFromLocalStorage().id;
+        let data = await fetch(`${apiURL}/users/${currentUser}`);
+        let res = await data.json();
+        console.log("fetching user, user is", res);
+        return res;
+    }
+
+    async function fetchOrderItemsFromLocalStorage() {
+        let user = await fetchUser();
+        displayOrderSummary(user.cart);
     }
 
     function fetchUserFromLocalStorage() {
@@ -88,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateWalletUI(wallet) {
-        walletBalanceElement.innerHTML = `<b>${wallet.balance} </b>`;
+        walletBalanceElement.innerHTML = `<b>${wallet.balance} SS Coins</b>`;
         walletHistoryContainer.innerHTML = '';
         wallet.history.forEach(entry => {
             let entryElement = document.createElement('div');
@@ -127,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
           .catch(error => console.error('Error updating user on server:', error));
     }
 
-    function handleOrderConfirmation() {
+    async function handleOrderConfirmation() {
         let user = fetchUserFromLocalStorage();
         let walletPassword = walletPasswordInput.value;
 
@@ -142,8 +150,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         deductFromWallet(user, totalAmount);
+
+        // Remove items from the cart
+        await clearCartOnServer(user.id);
+
+        // Clear cart items from local storage
         localStorage.removeItem('cartItems');
-        removeFunction(user.id);
+
+        // Redirect to thank you page
         window.location.href = 'thankYou.html';
     }
 
@@ -181,8 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('User not found in localStorage.');
     }
 
-    async function removeFunction(userId) {
-        fetch(`${apiURL}/users/${userId}`, {
+    async function clearCartOnServer(userId) {
+        return fetch(`${apiURL}/users/${userId}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -196,8 +210,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            console.log('Cart Delete successful:', data);
-            localStorage.setItem("cartItems", JSON.stringify([]));
+            console.log('Cart cleared successfully on server:', data);
+            return data;
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);

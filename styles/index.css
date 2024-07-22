@@ -40,6 +40,7 @@ body {
     margin-top: 10px;
     height: 30px;
     justify-content: space-around;
+    align-items: c;
 }
 
 .header_wrap a{
@@ -48,6 +49,14 @@ body {
 .header_wrap > select{
     background-color: #2a2929;
 }
+.header_wrap>#user-name{
+    font-size: 13px;
+    margin-top: 8px;
+    margin-right: 35px;
+  }
+ .header_wrap>.contact-later{
+    margin-top: 5px;
+  } 
 
 .navbar{
     display: flex;
@@ -289,19 +298,36 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    padding: 30px;
 }
 .card{
     border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 10px;
+    /* padding: 10px; */
+    /* border-radius: 10px; */
     width: 350px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    background-color: #fff;
+    /* padding: 10px; */
+    border: 1px solid #f0f0f0;
+    /* border-radius: 10px; */
+    position: relative;
+    width: 250px;
+    text-align: center;
+    padding-bottom: 15px;
 }
 .card img{
     width: 100%;
     height: auto;
 }
-
+.card img{
+    width: 100%;
+    height: auto;
+}
+.name{
+   font-weight: bold;
+   margin-top: 5px;
+   margin-bottom: 5px;
+}
 @media(max-width: 1024px){
     .navbar{
         display: grid;

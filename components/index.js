@@ -30,7 +30,7 @@ if (isLogged) {
 const shoe_category = document.getElementById('shoe_category');
 
 document.addEventListener("DOMContentLoaded", ()=> {
-  fetch("http://localhost:3000/products")
+  fetch("https://mock-reebok-api.onrender.com/products")
     .then(response => response.json())
     .then(product => {
       const container = document.getElementById("card-container");
@@ -38,28 +38,35 @@ document.addEventListener("DOMContentLoaded", ()=> {
       product = product.slice(0, 15);
       product.forEach(products => {
         
-        if(products.Producttag === "RUNNING SHOES"){
+        if(products.Producttag == "RUNNING SHOES"){
           const card = document.createElement("div");
         card.className = "card";
 
         const img = document.createElement("img");
         img.src = products.ImageUrl;
+        img.className ="productImage" 
         card.appendChild(img);
+         img.dataset.clickedProductId= products.id
+         img.addEventListener('click', ()=>{
+             window.location.href = `details.html?id=${img.dataset.clickedProductId}`
+         })
 
         const tag = document.createElement("div");
         tag.textContent = products.Producttag;
         card.appendChild(tag);
+        tag.className = "tag"
 
         const details = document.createElement("div");
         details.className = "card-details";
 
         const name = document.createElement("div");
+        name.className = "name"
         name.textContent = products.ProductName;
         details.appendChild(name);
 
         const price = document.createElement("div");
         price.className = "card-price";
-        price.textContent = products.price;
+        price.textContent = `₹ ${products.price}`;
         details.appendChild(price);
         card.appendChild(details);
         container.appendChild(card);
@@ -135,3 +142,8 @@ function prevSlide2() {
 
 // Optional: Auto-slide
 setInterval(nextSlide2, 5000);
+
+// let homePageLogo = document.getElementById("homePageLogo")
+// homePageLogo.addEventListener('click', ()=>{
+//       window.location.href = index.html
+// })

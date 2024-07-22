@@ -76,3 +76,7 @@ const showData = async(data) => {
 
 }
 
+let homePageLogo = document.getElementById("homePageLogo")
+homePageLogo.addEventListener('click', ()=>{
+      window.location.href = index.html
+})
