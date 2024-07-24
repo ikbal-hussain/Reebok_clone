@@ -10,13 +10,10 @@ Frontend | Backend
 ## Deployed Link
 <h3><a href="https://sportstyle-reebok-inspired.netlify.app/">Live Demo : SportStyle</a></h3>
 
-## Live Video Walkthrough of the project
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8w3oPWJzHdU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
 ## Youtube Link Video Walkthrough of the project
-<a href="https://www.youtube.com/watch?v=8w3oPWJzHdU">project
-presentation</a>
+<a href="https://youtu.be/ZKKcBcCgdS8">Project
+presentation video</a>
 
 ## Features
 - Filter: Filters product according to product type
