@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
    let wishlistBtn = document.querySelector("#wishlistBtn");
    wishlistBtn.addEventListener('click', () => {
-       window.location.href = "wishlist.html";
+       window.location.href = "wishlist_products.html";
    });
 
    let contactUs = document.querySelector("#contactUs");
