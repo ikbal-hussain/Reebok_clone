@@ -11,7 +11,7 @@ Frontend | Backend
 <h3><a href="https://sportstyle-reebok-inspired.netlify.app/">Live Demo : SportStyle</a></h3>
 
 
-## Youtube Link Video Walkthrough of the project
+## Video Walkthrough of the project
 <a href="https://youtu.be/ZKKcBcCgdS8">Project
 presentation video</a>
 
