@@ -22,7 +22,7 @@ presentation video</a>
 - Cart: Add product to cart for checkout
 - Wishlist: Add products to wishlist to view later
 - Checkout: Buy products of desired quantity
-- Wallet: Pay with secured wallet 
+- Wallet: Pay with secured wallet. 
 
 
 
