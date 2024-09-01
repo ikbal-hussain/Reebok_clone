@@ -56,8 +56,8 @@ To run this project locally:
 
      ## Contributors
      
-  - <a href="https://github.com/Aadvi">Aaditya Vijay Srivastava</a>
   - <a href="https://github.com/ikbal-hussain">Ikbal Hussain</a>
+  - <a href="https://github.com/Aadvi">Aaditya Vijay Srivastava</a>
   - <a href="https://github.com/Mukul-kudegave">Mukul Kudegave</a>
   - <a href="https://github.com/imrayn06">Narayan Dutta</a>
 
