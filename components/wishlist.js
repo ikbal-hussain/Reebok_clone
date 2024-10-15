@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const wishlistContainer = document.getElementById('wishlist-products');
         wishlistContainer.innerHTML = '';
 
-        if (!wishlist || wishlist.length === 0) {
+        if (!wishlist || wishlist.length == 0) {
             wishlistContainer.innerHTML = '<p>No items in the wishlist.</p>';
             return;
         }

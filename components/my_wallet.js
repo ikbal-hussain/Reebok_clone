@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return user;
     }
-
     function updateWalletUI(wallet) {
         walletBalanceElement.innerHTML = `<b>${wallet.balance}</b>`;
         walletHistoryContainer.innerHTML = '';
@@ -39,13 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
             entryElement.className = 'wallet-entry';
             entryElement.innerHTML = `
                 <hr>
-                <p><strong>Amount:</strong> ${entry.amount} SS Coins</p>
-                <p><strong>Date:</strong> ${entry.date}</p>
-                <p><strong>Time:</strong> ${entry.time}</p>
+                <p><strong>Amount:</strong> <span class="amount">${entry.amount} SS Coins</span></p>
+                <p><strong>Date:</strong> <span class="date">${entry.date}</span></p>
+                <p><strong>Time:</strong> <span class="time">${entry.time}</span></p>
             `;
             walletHistoryContainer.appendChild(entryElement);
         });
     }
+    
 
     backToHomeBtn.addEventListener('click', () => {
         window.location.href = 'index.html'; // Redirect to home page

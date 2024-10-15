@@ -2,24 +2,19 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f0f4f8;
-    color: #333;
-    /* display: flex; */
-    flex-direction: column;
-    align-items: center;
+    background: #fff; /* White background */
+    color: #000; /* Black text */
 }
-
 
 header {
     width: 100%;
-    background-color: #e6a757;
+    background-color: #c40c2e; /* Red header */
     color: #fff;
     padding: 10px;
     text-align: center;
     position: relative;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto; /* Centering */
     height: 80px;
 }
 
@@ -27,13 +22,14 @@ header {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background-color: #c40c2e;
+    background-color: #000; /* Black button */
     color: #fff;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.9rem;
     cursor: pointer;
     border-radius: 4px;
     font-size: 1rem;
+    margin-right: 30px;
 }
 
 #backToHomeBtn i {
@@ -42,10 +38,8 @@ header {
 
 main {
     width: 90%;
-    width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    /* border: 1px solid; */
+    max-width: 900px;
+    margin: 2rem auto;
 }
 
 #walletSummary {
@@ -63,14 +57,14 @@ main {
 
 #walletBalance {
     font-size: 2rem;
-    color: #007bff;
+    color: #c40c2e; /* Red for wallet balance */
     font-weight: bold;
 }
 
 #refreshBalanceBtn {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background-color: #28a745;
+    background-color: #c40c2e; /* Red button */
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -92,6 +86,59 @@ main {
     background-color: #f9f9f9;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-left: 4px solid #c40c2e; /* Red border for wallet history entries */
+}
+
+.wallet-entry hr {
+    border-top: 1px solid #e0e0e0;
+    margin: 0.5rem 0;
+}
+
+.wallet-entry p {
+    margin: 0.5rem 0;
+    color: #000; /* Black text */
+}
+#wallet-header{
+       display: flex;
+       justify-content: center;
+
+       align-items: center;
+       height: 45px;
+}
+/* For Wallet Hitory */
+#walletHistoryContainer {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.wallet-entry {
+    background-color: #fff; /* White background */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #c40c2e; /* Bold Red border for emphasis */
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.wallet-entry::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.05));
+    z-index: 1;
+    pointer-events: none;
+}
+
+.wallet-entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow for hover effect */
 }
 
 .wallet-entry hr {
@@ -102,7 +149,28 @@ main {
 
 .wallet-entry p {
     margin: 0.5rem 0;
+    color: #333; /* Dark gray text for readability */
+    font-size: 1rem;
 }
-/* #walletContainer{
 
-} */
+.wallet-entry p strong {
+    color: #c40c2e; /* Red text for highlighting labels */
+}
+
+.wallet-entry .amount {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000; /* Black text for the amount */
+}
+
+.wallet-entry .date,
+.wallet-entry .time {
+    font-size: 0.9rem;
+    color: #777; /* Light gray for secondary information */
+}
+
+/* Add a subtle transition for smooth hover effect */
+.wallet-entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Hover effect with larger shadow */
+}
