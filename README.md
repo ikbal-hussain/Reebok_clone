@@ -1,9 +1,7 @@
-## SportStyle
+# SportStyle
 
 SportStyle is an interactive e-commerce platform developed to showcase and manage a variety of sportswear and accessories. This project is built using HTML, CSS, and JavaScript, featuring an intuitive user interface and seamless shopping experience.
 
-## Project Type
-Frontend | Backend
 
 ## Project Images
 ![image](https://github.com/ikbal-hussain/Amendment-APIs_027/blob/main/assests/SportStyle%20page.png)
@@ -34,7 +32,7 @@ presentation video</a>
 
 ## API Endpoints
 GET /users - used to verify users
-GET /products
+GET /products - used to get the products
 
 
 ## Tech Stack
